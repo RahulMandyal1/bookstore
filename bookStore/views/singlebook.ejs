@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Get a single book from our Book store</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <header>
+      <a href="/" class="logo">Book.<span>store</span></a>
+      <nav>
+        <ul>
+          <li><a href="/" class="menu-btn">home</a></li>
+          <li><a href="/books" class="menu-btn">all-books</a></li>
+          <li>
+            <a href="/books/fiction/category" class="menu-btn">fiction</a>
+          </li>
+          <li>
+            <a href="/books/technology/category" class="menu-btn">technology</a>
+          </li>
+          <li>
+            <a href="/books/adventure/category" class="menu-btn">adventure</a>
+          </li>
+          <li>
+            <a href="/books/motivation/category" class="menu-btn">motivation</a>
+          </li>
+          <li><a href="/books/new" class="menu-btn btn">new book</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="single-book">
+        <div class="container">
+          <h2 class="Book-heading"><%= book.title %></h2>
+          <div class="additional-information">
+            <% book.category.forEach(c => { %>
+            <p>Category: <span><%=c.name%></span></p>
+            <% })%>
+            <p>publication : <span><%=book.publication%></span></p>
+            <p>Pages: <span> <%=book.pages%></span></p>
+            <% book.author.forEach(c => { %>
+            <p>Author: <span><%=c.name%></span></p>
+            <% })%>
+          </div>
+          <p>
+            <span><%=book.summary%></span>
+          </p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
